@@ -38,7 +38,7 @@ def boss_spider(params):
             job_name = node.xpath('./div/div[1]/h3/a/div[1]/text()')[0]
             detail_job_url = node.xpath('./div/div[1]/h3/a/@href')[0]
             if 'http' not in detail_job_url:
-                detail_job_url = '"https://www.zhipin.com' + detail_job_url
+                detail_job_url = 'https://www.zhipin.com' + detail_job_url
             money = node.xpath('./div/div[1]/h3/a/span/text()')[0]
             addr = node.xpath('./div/div[1]/p/text()')[0]
             addr, experience, education = addr.split(',')
@@ -46,7 +46,7 @@ def boss_spider(params):
             company = node.xpath('./div/div[2]/div/h3/a/text()')[0]
             company_url = node.xpath('./div/div[2]/div/h3/a/@href')[0]
             if 'http' not in company_url:
-                company_url = '"https://www.zhipin.com' + company_url
+                company_url = 'https://www.zhipin.com' + company_url
 
             company_detail = node.xpath('./div/div[2]/div/p/text()')[0]
             if company_detail.count(',') > 1:
